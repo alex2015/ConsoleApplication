@@ -41,9 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dispose\ComplexResourceHolder.cs" />
     <Compile Include="Example1.cs" />
     <Compile Include="ExceptionLogEntry.cs" />
     <Compile Include="LogEntryBaseEx.cs" />
+    <Compile Include="LogImporter.cs" />
+    <Compile Include="Dispose\ProperComplexResourceHolder.cs" />
     <Compile Include="Severity.cs" />
     <Compile Include="LogEntryBase.cs" />
     <Compile Include="LogEntry.cs" />
