@@ -44,6 +44,7 @@
     <Compile Include="Dispose\ComplexResourceHolder.cs" />
     <Compile Include="Example1.cs" />
     <Compile Include="ExceptionLogEntry.cs" />
+    <Compile Include="Iterator.cs" />
     <Compile Include="LogEntryBaseEx.cs" />
     <Compile Include="LogImporter.cs" />
     <Compile Include="Dispose\ProperComplexResourceHolder.cs" />
