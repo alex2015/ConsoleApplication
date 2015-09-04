@@ -48,6 +48,7 @@
     <Compile Include="LogEntryBaseEx.cs" />
     <Compile Include="LogImporter.cs" />
     <Compile Include="Dispose\ProperComplexResourceHolder.cs" />
+    <Compile Include="Observer.cs" />
     <Compile Include="Severity.cs" />
     <Compile Include="LogEntryBase.cs" />
     <Compile Include="LogEntry.cs" />
