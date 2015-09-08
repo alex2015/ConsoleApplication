@@ -7,6 +7,10 @@ namespace ConsoleApplication
 {
     internal class Program
     {
+        public delegate int BinaryOp(int x, int y);
+
+        public event BinaryOp myEvent;
+
         private static List<string> readLines = new List<string>
         {
             "a",

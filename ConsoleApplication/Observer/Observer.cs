@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace ConsoleApplication
+namespace ConsoleApplication.Observer
 {
     public class LogEntryEventArgs : EventArgs
     {
