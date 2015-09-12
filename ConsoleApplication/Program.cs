@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Threading;
+using ConsoleApplication.Thead;
 
 namespace ConsoleApplication
 {
@@ -48,19 +47,8 @@ namespace ConsoleApplication
 
 
 
-
+            BackGroundThread.MyMain();
         }
 
-        // Сигнатура метода должна совпадать 
-        // с сигнатурой делегата ParameterizedThreadStart
-        private static void ComputeBoundOp(Object state)
-        {
-            // Метод, выполняемый выделенным потоком
-            Console.WriteLine("In ComputeBoundOp: state={0}", state);
-            Thread.Sleep(1000); // Имитация другой работы (1 секунда)
-            // После возвращения методом управления выделенный поток завершается
-        }
     }
-
-
 }
