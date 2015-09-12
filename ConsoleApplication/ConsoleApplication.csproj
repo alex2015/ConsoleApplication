@@ -46,6 +46,8 @@
     <Compile Include="ExceptionLogEntry.cs" />
     <Compile Include="Iterator.cs" />
     <Compile Include="LogEntryBaseEx.cs" />
+    <Compile Include="Visitor\ILogEntryVisitor.cs" />
+    <Compile Include="Visitor\DatabaseLogSaver.cs" />
     <Compile Include="LogImporter.cs" />
     <Compile Include="Dispose\ProperComplexResourceHolder.cs" />
     <Compile Include="Observer\MemoryLeak.cs" />
