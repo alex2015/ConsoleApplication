@@ -30,6 +30,8 @@
         {
             this.btnCallMethod = new System.Windows.Forms.Button();
             this.txtInput = new System.Windows.Forms.TextBox();
+            this.btnShowMessage = new System.Windows.Forms.Button();
+            this.btnMultiAwaits = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCallMethod
@@ -49,11 +51,33 @@
             this.txtInput.Size = new System.Drawing.Size(216, 20);
             this.txtInput.TabIndex = 1;
             // 
+            // btnShowMessage
+            // 
+            this.btnShowMessage.Location = new System.Drawing.Point(81, 169);
+            this.btnShowMessage.Name = "btnShowMessage";
+            this.btnShowMessage.Size = new System.Drawing.Size(114, 46);
+            this.btnShowMessage.TabIndex = 2;
+            this.btnShowMessage.Text = "Показать сообщение";
+            this.btnShowMessage.UseVisualStyleBackColor = true;
+            this.btnShowMessage.Click += new System.EventHandler(this.btnShowMessage_Click);
+            // 
+            // btnMultiAwaits
+            // 
+            this.btnMultiAwaits.Location = new System.Drawing.Point(81, 263);
+            this.btnMultiAwaits.Name = "btnMultiAwaits";
+            this.btnMultiAwaits.Size = new System.Drawing.Size(114, 46);
+            this.btnMultiAwaits.TabIndex = 3;
+            this.btnMultiAwaits.Text = "Много";
+            this.btnMultiAwaits.UseVisualStyleBackColor = true;
+            this.btnMultiAwaits.Click += new System.EventHandler(this.btnMultiAwaits_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(295, 376);
+            this.Controls.Add(this.btnMultiAwaits);
+            this.Controls.Add(this.btnShowMessage);
             this.Controls.Add(this.txtInput);
             this.Controls.Add(this.btnCallMethod);
             this.Name = "MainForm";
@@ -67,6 +91,8 @@
 
         private System.Windows.Forms.Button btnCallMethod;
         private System.Windows.Forms.TextBox txtInput;
+        private System.Windows.Forms.Button btnShowMessage;
+        private System.Windows.Forms.Button btnMultiAwaits;
     }
 }
 

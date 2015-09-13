@@ -27,5 +27,37 @@ namespace FunWithCSarpAsync
             Thread.Sleep(10000);
             return "Done with work!";
         }
+
+
+
+        private async void btnShowMessage_Click(object sender, EventArgs e)
+        {
+            await MethodReturningVoidAsync();
+            MessageBox.Show("Done!");
+        }
+
+        private Task MethodReturningVoidAsync()
+        {
+            return Task.Run(() =>
+            {  /*  Выполнение  каких-то  действий...  */
+                Thread.Sleep(4000);
+            });
+        }
+
+        private async void btnMultiAwaits_Click(object sender, EventArgs e)
+        {
+            await Task.Run(() => { Thread.Sleep(2000); });
+
+            MessageBox.Show("Done  with  first  task!");  //  завершена  первая  задача
+
+            await Task.Run(() => { Thread.Sleep(2000); });
+
+            MessageBox.Show("Done  with  second  task!");  //  завершена  вторая  задача
+
+            await Task.Run(() => { Thread.Sleep(2000); });
+
+            MessageBox.Show("Done  with  third  task!");  //  завершена  третья  задача
+
+        }
     }
 }
