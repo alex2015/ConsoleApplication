@@ -59,5 +59,10 @@ namespace FunWithCSarpAsync
             MessageBox.Show("Done  with  third  task!");  //  завершена  третья  задача
 
         }
+
+        private void btnSum_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

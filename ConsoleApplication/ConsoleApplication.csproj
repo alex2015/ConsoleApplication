@@ -47,6 +47,7 @@
     <Compile Include="Iterator.cs" />
     <Compile Include="LogEntryBaseEx.cs" />
     <Compile Include="Thead\BackGroundThread.cs" />
+    <Compile Include="Thead\AddWithThreads.cs" />
     <Compile Include="Thead\MyThreadStart.cs" />
     <Compile Include="Visitor\ILogEntryVisitor.cs" />
     <Compile Include="Visitor\DatabaseLogSaver.cs" />

@@ -32,6 +32,7 @@
             this.txtInput = new System.Windows.Forms.TextBox();
             this.btnShowMessage = new System.Windows.Forms.Button();
             this.btnMultiAwaits = new System.Windows.Forms.Button();
+            this.btnSum = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCallMethod
@@ -71,11 +72,22 @@
             this.btnMultiAwaits.UseVisualStyleBackColor = true;
             this.btnMultiAwaits.Click += new System.EventHandler(this.btnMultiAwaits_Click);
             // 
+            // btnSum
+            // 
+            this.btnSum.Location = new System.Drawing.Point(81, 328);
+            this.btnSum.Name = "btnSum";
+            this.btnSum.Size = new System.Drawing.Size(114, 46);
+            this.btnSum.TabIndex = 4;
+            this.btnSum.Text = "Суммировать";
+            this.btnSum.UseVisualStyleBackColor = true;
+            this.btnSum.Click += new System.EventHandler(this.btnSum_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(295, 376);
+            this.ClientSize = new System.Drawing.Size(295, 398);
+            this.Controls.Add(this.btnSum);
             this.Controls.Add(this.btnMultiAwaits);
             this.Controls.Add(this.btnShowMessage);
             this.Controls.Add(this.txtInput);
@@ -93,6 +105,7 @@
         private System.Windows.Forms.TextBox txtInput;
         private System.Windows.Forms.Button btnShowMessage;
         private System.Windows.Forms.Button btnMultiAwaits;
+        private System.Windows.Forms.Button btnSum;
     }
 }
 

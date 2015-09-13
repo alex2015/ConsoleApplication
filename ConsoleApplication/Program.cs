@@ -47,7 +47,7 @@ namespace ConsoleApplication
 
 
 
-            BackGroundThread.MyMain();
+            AddWithThreads.MyMain();
         }
 
     }
