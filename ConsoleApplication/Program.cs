@@ -47,7 +47,7 @@ namespace ConsoleApplication
 
 
 
-            AddWithThreads.MyMain();
+            MyThreadPool.MyMain();
         }
 
     }
