@@ -47,7 +47,7 @@ namespace ConsoleApplication
 
 
 
-            MyThreadPool.MyMain();
+            CancellationDemo.MyMain();
         }
 
     }
