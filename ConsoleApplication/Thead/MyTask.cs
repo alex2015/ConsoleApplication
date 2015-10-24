@@ -8,7 +8,7 @@ namespace ConsoleApplication.Thead
     {
         public static void MyMain()
         {
-            MyMain4();
+            MyMain5();
         }
 
         #region MyMain1
@@ -151,6 +151,49 @@ namespace ConsoleApplication.Thead
             for (; n > 0; n--)
             {
                 ct.ThrowIfCancellationRequested();
+                checked
+                {
+                    sum += n;
+                } // при больших n появляется
+                // исключение System.OverflowException
+            }
+            return sum;
+        }
+
+        #endregion
+
+        #region MyMain4
+
+        public static void MyMain5()
+        {
+            Task<Int32[]> parent = new Task<Int32[]>(() =>
+            {
+                var results = new Int32[3]; // Создание массива для результатов
+                // Создание и запуск 3 дочерних заданий
+                new Task(() => results[0] = Sum5(10000), TaskCreationOptions.AttachedToParent).Start();
+                new Task(() => results[1] = Sum5(20000), TaskCreationOptions.AttachedToParent).Start();
+                new Task(() => results[2] = Sum5(30000), TaskCreationOptions.AttachedToParent).Start();
+
+                // Возвращается ссылка на массив
+                // (элементы могут быть не инициализированы)
+                return results;
+            });
+
+            // Вывод результатов после завершения родительского и дочерних заданий
+            var cwt = parent.ContinueWith(parentTask => Array.ForEach(parentTask.Result, Console.WriteLine));
+
+            // Запуск родительского задания, которое запускает дочерние
+            parent.Start();
+
+            Console.ReadKey();
+        }
+
+        private static Int32 Sum5(Int32 n)
+        {
+            Thread.Sleep(1000);
+            Int32 sum = 0;
+            for (; n > 0; n--)
+            {
                 checked
                 {
                     sum += n;
