@@ -47,7 +47,7 @@ namespace ConsoleApplication
 
 
 
-            CancellationDemo.MyMain();
+            MyTask.MyMain();
         }
 
     }
