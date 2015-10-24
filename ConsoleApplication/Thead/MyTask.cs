@@ -8,8 +8,10 @@ namespace ConsoleApplication.Thead
     {
         public static void MyMain()
         {
-            MyMain2();
+            MyMain4();
         }
+
+        #region MyMain1
 
         public static void MyMain1()
         {
@@ -49,6 +51,10 @@ namespace ConsoleApplication.Thead
             }
             return sum;
         }
+
+        #endregion
+
+        #region MyMain2
 
         public static void MyMain2()
         {
@@ -99,5 +105,61 @@ namespace ConsoleApplication.Thead
             }
             return sum;
         }
+
+        #endregion
+
+        #region MyMain3
+
+        public static void MyMain3()
+        {
+            // Создание объекта Task с отложенным запуском
+            var t = Task.Run(() => Sum(CancellationToken.None, 10000));
+
+            // Метод ContinueWith возвращает объект Task, но обычно
+            // он не используется
+            Task cwt = t.ContinueWith(task 
+                => 
+                Console.WriteLine("The sum is: " + task.Result));
+
+            Console.ReadKey();
+        }
+
+        #endregion
+
+        #region MyMain4
+
+        public static void MyMain4()
+        {
+            CancellationTokenSource cts = new CancellationTokenSource();
+
+            // Создание и запуск задания с продолжением
+            Task<Int32> t = Task.Run(() => Sum4(cts.Token, 10000), cts.Token);
+            Thread.Sleep(1000);
+            cts.Cancel();
+            // Метод ContinueWith возвращает объект Task, но обычно
+            // он не используется
+            t.ContinueWith(task => Console.WriteLine("The sum is: " + task.Result), TaskContinuationOptions.OnlyOnRanToCompletion);
+            t.ContinueWith(task => Console.WriteLine("Sum threw: " + task.Exception), TaskContinuationOptions.OnlyOnFaulted);
+            t.ContinueWith(task => Console.WriteLine("Sum was canceled"), TaskContinuationOptions.OnlyOnCanceled);
+
+            Console.ReadKey();
+        }
+
+        private static Int32 Sum4(CancellationToken ct, Int32 n)
+        {
+            Int32 sum = 0;
+            for (; n > 0; n--)
+            {
+                ct.ThrowIfCancellationRequested();
+                checked
+                {
+                    sum += n;
+                } // при больших n появляется
+                // исключение System.OverflowException
+            }
+            return sum;
+        }
+
+        #endregion
     }
 }
