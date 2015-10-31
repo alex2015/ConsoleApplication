@@ -47,7 +47,7 @@ namespace ConsoleApplication
 
 
 
-            MyTask.MyMain();
+            MyParallel.MyMain();
         }
 
     }
