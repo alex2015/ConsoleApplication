@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConsoleApplication.Thead
 {
-    internal class MyParallel
+    public class MyParallel
     {
         public static void MyMain()
         {
-            MyMain2();
+            MyMain3();
         }
 
         #region MyMain1
@@ -112,6 +113,36 @@ namespace ConsoleApplication.Thead
                 });
 
             return masterTotal;
+        }
+
+        #endregion
+
+
+        #region MyMain3
+
+        public static void MyMain3()
+        {
+            ObsoleteMethods(Assembly.GetCallingAssembly());
+
+            Console.ReadKey();
+        }
+
+        [Obsolete]
+        public static void ObsoleteMethods(Assembly assembly)
+        {
+            var query = from type in assembly.GetExportedTypes().AsParallel()
+                from method in type.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static)
+                let obsoleteAttrType = typeof (ObsoleteAttribute)
+                where Attribute.IsDefined(method, obsoleteAttrType)
+                orderby type.FullName
+                let obsoleteAttrObj = (ObsoleteAttribute) Attribute.GetCustomAttribute(method, obsoleteAttrType)
+                select String.Format("Type={0}\nMethod={1}\nMessage={2}\n", type.FullName, method.ToString(),obsoleteAttrObj.Message);
+
+            // Вывод результатов
+            foreach (var result in query)
+            {
+                Console.WriteLine(result);
+            }
         }
 
         #endregion
