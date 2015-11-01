@@ -48,6 +48,7 @@
     <Compile Include="LogEntryBaseEx.cs" />
     <Compile Include="Thead\BackGroundThread.cs" />
     <Compile Include="Thead\AddWithThreads.cs" />
+    <Compile Include="Thead\MyTimer.cs" />
     <Compile Include="Thead\MyParallel.cs" />
     <Compile Include="Thead\MyTask.cs" />
     <Compile Include="Thead\MyThreadPool.cs" />
