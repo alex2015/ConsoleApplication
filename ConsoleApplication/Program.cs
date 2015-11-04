@@ -47,7 +47,7 @@ namespace ConsoleApplication
 
 
 
-            MyTimer.MyMain();
+            MyAsync.MyMain();
         }
 
     }
