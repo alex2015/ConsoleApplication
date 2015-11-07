@@ -47,7 +47,7 @@ namespace ConsoleApplication
 
 
 
-            MyAutomat.MyMain();
+            MyWebClient.MyMain();
         }
 
     }
