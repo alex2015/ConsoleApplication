@@ -7,7 +7,7 @@ namespace ConsoleApplication.Thead
     {
         public static void MyMain()
         {
-            MyMain1();
+            MyMain2();
         }
 
         #region MyMain1
@@ -44,6 +44,50 @@ namespace ConsoleApplication.Thead
             // Обработка строки результата (если нужно)...
             return result;
         }
+
+        #endregion
+
+
+        #region MyMain2
+
+        public static async void MyMain2()
+        {
+            Task.Run(async () =>
+            {
+                // Этот код выполняется в потоке из пула
+                // TODO: Подготовительные вычисления...
+                await myMethodAsync();  // Инициирование асинхронной операции
+                // Продолжение обработки...
+            });
+
+
+
+            Console.ReadKey();
+        }
+
+        private static async Task<string> myMethodAsync()
+        {
+            return string.Empty;
+        }
+
+        #endregion
+
+
+        #region MyMain3
+
+        public static async void MyMain3()
+        {
+
+
+            Console.ReadKey();
+        }
+
+        static async Task OuterAsyncFunction()
+        {
+            var q = InnerAsyncFunction();  // В этой строке пропущен оператор await!
+            // Код продолжает выполняться, как и InnerAsyncFunction...
+        }
+        static async Task InnerAsyncFunction() { /* ... */ }
 
         #endregion
 
