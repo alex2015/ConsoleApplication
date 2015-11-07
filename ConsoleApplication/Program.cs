@@ -47,7 +47,7 @@ namespace ConsoleApplication
 
 
 
-            MyAsync.MyMain();
+            MyAutomat.MyMain();
         }
 
     }
