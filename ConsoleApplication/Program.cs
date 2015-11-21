@@ -47,7 +47,7 @@ namespace ConsoleApplication
 
 
 
-            MyWebClient.MyMain();
+            MyLock.MyMain();
         }
 
     }
