@@ -47,7 +47,7 @@ namespace ConsoleApplication
 
 
 
-            MyLock.MyMain();
+            MyWebRequest.MyMain();
         }
 
     }

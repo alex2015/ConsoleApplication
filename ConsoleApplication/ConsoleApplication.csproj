@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +51,7 @@
     <Compile Include="Thead\AddWithThreads.cs" />
     <Compile Include="Thead\MyLock.cs" />
     <Compile Include="Thead\MyCancellation.cs" />
+    <Compile Include="Thead\MyWebRequest.cs" />
     <Compile Include="Thead\MyWebClient.cs" />
     <Compile Include="Thead\MyLogger.cs" />
     <Compile Include="Thead\MyAutomat.cs" />
