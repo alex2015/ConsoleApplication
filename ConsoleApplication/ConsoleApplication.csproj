@@ -51,6 +51,7 @@
     <Compile Include="Thead\AddWithThreads.cs" />
     <Compile Include="Thead\MyLock.cs" />
     <Compile Include="Thead\MyCancellation.cs" />
+    <Compile Include="Thead\MyThreadEvent.cs" />
     <Compile Include="Thead\MyWebRequest.cs" />
     <Compile Include="Thead\MyWebClient.cs" />
     <Compile Include="Thead\MyLogger.cs" />
