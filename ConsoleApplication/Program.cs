@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ConsoleApplication.AsyncProgram;
 using ConsoleApplication.Thead;
 
 namespace ConsoleApplication
@@ -47,7 +48,7 @@ namespace ConsoleApplication
 
 
 
-            MyWebRequest.MyMain();
+            MyAsyncProgram.MyMain();
         }
 
     }
