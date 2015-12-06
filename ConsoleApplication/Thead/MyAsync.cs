@@ -88,4 +88,20 @@ namespace ConsoleApplication.Thead
 
 
     }
+
+    internal class BaseClass
+    {
+        public virtual async void AlexsMethod()
+        {
+        }
+    }
+
+    internal class SubClass : BaseClass
+    {
+        // Переопределяет метод базового класса AlexsMethod
+        public override void AlexsMethod()
+        {
+
+        }
+    }
 }
