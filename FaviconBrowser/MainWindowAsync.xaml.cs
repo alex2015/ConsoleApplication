@@ -21,7 +21,7 @@ namespace FaviconBrowser
             "bing.com",
             "oreilly.com",
             "simple-talk.com",
-            "microsoft.com",
+            //"microsoft.com",
             "facebook.com",
             "twitter.com",
             "reddit.com",
@@ -34,20 +34,21 @@ namespace FaviconBrowser
             InitializeComponent();
         }
 
-        private void GetButton_OnClick(object sender, RoutedEventArgs e)
+        private async void GetButton_OnClick(object sender, RoutedEventArgs e)
         {
-            foreach (string domain in s_Domains)
+            var images = await Task.WhenAll(s_Domains.Select(GetFavicon).ToList());
+
+            foreach (var image in images)
             {
-                AddAFavicon(domain);
+                m_WrapPanel.Children.Add(image);
             }
         }
 
-        private async void AddAFavicon(string domain)
+        private async Task<Image> GetFavicon(string domain)
         {
             WebClient webClient = new WebClient();
             byte[] bytes = await webClient.DownloadDataTaskAsync("http://" + domain + "/favicon.ico");
-            Image imageControl = MakeImageControl(bytes);
-            m_WrapPanel.Children.Add(imageControl);
+            return MakeImageControl(bytes);
         }
 
         private static Image MakeImageControl(byte[] bytes)
