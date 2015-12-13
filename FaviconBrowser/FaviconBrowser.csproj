@@ -56,6 +56,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="MainWindowAsyncExperiment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindowAsync.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -73,6 +77,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AsyncExample.cs" />
+    <Compile Include="MainWindowAsyncExperiment.xaml.cs">
+      <DependentUpon>MainWindowAsyncExperiment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindowAsync.xaml.cs">
       <DependentUpon>MainWindowAsync.xaml</DependentUpon>
     </Compile>
