@@ -4,7 +4,9 @@
         Title="MainWindow" Height="350" Width="525">
     <StackPanel>
         <Button Click="GetButton_OnClick">Get some favicons</Button>
+        <Button Click="GetSiteLength_OnClick">Get site length</Button>
         <WrapPanel Name="m_WrapPanel">
         </WrapPanel>
+        <Label Name="LblSiteLength" Content="" HorizontalAlignment="Left" Height="50" Margin="11,0,0,0" Width="481"/>
     </StackPanel>
 </Window>

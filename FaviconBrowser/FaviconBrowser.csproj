@@ -72,6 +72,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="AsyncExample.cs" />
     <Compile Include="MainWindowAsync.xaml.cs">
       <DependentUpon>MainWindowAsync.xaml</DependentUpon>
     </Compile>

@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -59,5 +62,36 @@ namespace FaviconBrowser
             imageControl.Height = 16;
             return imageControl;
         }
+
+        private async void GetSiteLength_OnClick(object sender, RoutedEventArgs e)
+        {
+            LblSiteLength.Content = await FindLargestWebPage(s_Domains.Select(i => "http://" + i).ToArray());
+        }
+
+        private async Task<string> FindLargestWebPage(string[] urls)
+        {
+            string largest = null;
+            int largestSize = 0;
+            foreach (string url in urls)
+            {
+                int size = await GetPageSizeAsync(url);
+                if (size > largestSize)
+                {
+                    largestSize = size;
+                    largest = url;
+                }
+            }
+            return largest;
+        }
+
+        private async Task<int> GetPageSizeAsync(string url)
+        {
+            WebClient webClient = new WebClient();
+            string page = await webClient.DownloadStringTaskAsync(url);
+            return page.Length;
+        }
+
+        Func<Task<int>> getNumberAsync = async delegate { return 3; };
+        private Func<Task<string>> getWordAsync = async () => "hello";
     }
 }
