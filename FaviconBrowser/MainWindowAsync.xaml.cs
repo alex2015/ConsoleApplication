@@ -36,7 +36,7 @@ namespace FaviconBrowser
 
         private async void GetButton_OnClick(object sender, RoutedEventArgs e)
         {
-            var images = await Task.WhenAll(s_Domains.Select(GetFavicon).ToList());
+            var images = await Task.WhenAll(s_Domains.Select(GetFaviconAsync).ToList());
 
             foreach (var image in images)
             {
@@ -44,7 +44,7 @@ namespace FaviconBrowser
             }
         }
 
-        private async Task<Image> GetFavicon(string domain)
+        private async Task<Image> GetFaviconAsync(string domain)
         {
             WebClient webClient = new WebClient();
             byte[] bytes = await webClient.DownloadDataTaskAsync("http://" + domain + "/favicon.ico");
