@@ -50,6 +50,7 @@
     <Compile Include="LogEntryBaseEx.cs" />
     <Compile Include="Thead\BackGroundThread.cs" />
     <Compile Include="Thead\AddWithThreads.cs" />
+    <Compile Include="Thead\MyAsyncException.cs" />
     <Compile Include="Thead\MyLock.cs" />
     <Compile Include="Thead\MyCancellation.cs" />
     <Compile Include="Thead\MyThreadEvent.cs" />

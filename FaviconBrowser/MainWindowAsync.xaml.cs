@@ -36,7 +36,21 @@ namespace FaviconBrowser
 
         private async void GetButton_OnClick(object sender, RoutedEventArgs e)
         {
-            var images = await Task.WhenAll(s_Domains.Select(GetFaviconAsync).ToList());
+            var allTask = Task.WhenAll(s_Domains.Select(GetFaviconAsync).ToList());
+
+            Image[] images = null;
+
+            try
+            {
+                images = await allTask;
+            }
+            catch
+            {
+                foreach (Exception ex in allTask.Exception.InnerExceptions)
+                {
+                    // Обработать исключение
+                }
+            }
 
             foreach (var image in images)
             {

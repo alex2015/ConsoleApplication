@@ -48,7 +48,7 @@ namespace ConsoleApplication
 
 
 
-            MyAsyncProgram.MyMain();
+            MyAsyncException.MyMain();
         }
 
     }
