@@ -4,7 +4,7 @@
         Title="MainWindow" Height="350" Width="525">
     <StackPanel>
         <Button Click="GetButton_OnClick">Get some favicons</Button>
-        <Button Click="GetSum_OnClick">Get some favicons</Button>
+        <Button Click="GetSum_OnClick">Get Sum</Button>
         <WrapPanel Name="m_WrapPanel">
         </WrapPanel>
         <Label Name="LblSum" Content="Сумма неизвестна"/>
