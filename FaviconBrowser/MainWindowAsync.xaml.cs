@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 
 namespace FaviconBrowser
 {
@@ -76,6 +79,84 @@ namespace FaviconBrowser
             imageControl.Width = 16;
             imageControl.Height = 16;
             return imageControl;
+        }
+
+        private async void GetSum_OnClick(object sender, RoutedEventArgs e)
+        {
+            var s = await GetSum(1000000);
+            LblSum.Content = s;
+        }
+
+        private async Task<long> GetSum(long a)
+        {
+            return await Task.Run(() =>
+            {
+                long s = 0;
+                for (int i = 0; i < a; i++)
+                {
+                    s += i;
+                }
+
+                return s;
+            });
+        }
+
+
+
+
+        private async Task<int> MyMethod()
+        {
+            return 5;
+        }
+
+        private async Task<string> FetchFirstSuccessfulAsync(IEnumerable<string> urls)
+        {
+            // ЧТО ДЕЛАТЬ: проверить, что действительно получены адреса URL...
+            foreach (string url in urls)
+            {
+                try
+                {
+                    using (var client = new HttpClient())
+                    {
+                        return await client.GetStringAsync(url);
+                    }
+                }
+                catch (WebException exception)
+                {
+                    // ЧТО ДЕЛАТЬ: занести в журнал, обновить статистику и т.д.
+                }
+            }
+
+            throw new WebException("No URLs succeeded"); // URL не получены
+        }
+
+        private async Task<string> FetchFirstSuccessfulAsyncMY(IEnumerable<string> urls)
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    return await client.GetStringAsync(urls.First());
+                }
+            }
+            catch (WebException exception)
+            {
+                // ЧТО ДЕЛАТЬ: занести в журнал, обновить статистику и т.д.
+            }
+
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    return await client.GetStringAsync(urls.Last());
+                }
+            }
+            catch (WebException exception)
+            {
+                // ЧТО ДЕЛАТЬ: занести в журнал, обновить статистику и т.д.
+            }
+
+            throw new WebException("No URLs succeeded"); // URL не получены
         }
     }
 }
