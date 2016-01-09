@@ -8,5 +8,6 @@
         <WrapPanel Name="m_WrapPanel">
         </WrapPanel>
         <Label Name="LblSum" Content="Сумма неизвестна"/>
+        <Button Click="GetButton2_OnClick">Get some favicons2</Button>
     </StackPanel>
 </Window>

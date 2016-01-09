@@ -151,8 +151,6 @@ namespace ConsoleApplication.Thead
 
         #endregion
 
-        #region MyMain6
-
         private static readonly List<string> s_Domains = new List<string>
         {
             "google.com",
@@ -166,6 +164,8 @@ namespace ConsoleApplication.Thead
             "baidu.com",
             "bbc.co.uk"
         };
+
+        #region MyMain6
 
         private static async void MyMain6()
         {
@@ -194,6 +194,23 @@ namespace ConsoleApplication.Thead
             }
 
             return summa;
+        }
+
+        #endregion
+
+        #region MyMain7
+
+        private static async void MyMain7()
+        {
+            var tasks = s_Domains.Select(async i =>
+            {
+                using (var client = new HttpClient())
+                {
+                    return await client.GetStringAsync("http://" + i);
+                }
+            }).ToList();
+
+            string[] results = await Task.WhenAll(tasks);
         }
 
         #endregion

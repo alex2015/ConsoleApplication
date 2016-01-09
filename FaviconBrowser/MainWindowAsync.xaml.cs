@@ -158,5 +158,22 @@ namespace FaviconBrowser
 
             throw new WebException("No URLs succeeded"); // URL не получены
         }
+
+        private async void GetButton2_OnClick(object sender, RoutedEventArgs e)
+        {
+            List<Image> images = new List<Image>();
+
+            foreach (var domain in s_Domains)
+            {
+                WebClient webClient = new WebClient();
+                byte[] bytes = await webClient.DownloadDataTaskAsync("http://" + domain + "/favicon.ico");
+                images.Add(MakeImageControl(bytes));
+            }
+
+            foreach (var image in images)
+            {
+                m_WrapPanel.Children.Add(image);
+            }
+        }
     }
 }
