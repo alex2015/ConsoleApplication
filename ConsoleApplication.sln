@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunWithCSarpAsync", "FunWit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaviconBrowser", "FaviconBrowser\FaviconBrowser.csproj", "{FF26F65E-0DF6-4DC9-B37A-7CB5387244ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppAllCode", "WpfAppAllCode\WpfAppAllCode.csproj", "{52194D94-CF4C-4C4A-9888-623493DDA452}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FF26F65E-0DF6-4DC9-B37A-7CB5387244ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF26F65E-0DF6-4DC9-B37A-7CB5387244ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF26F65E-0DF6-4DC9-B37A-7CB5387244ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52194D94-CF4C-4C4A-9888-623493DDA452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52194D94-CF4C-4C4A-9888-623493DDA452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52194D94-CF4C-4C4A-9888-623493DDA452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52194D94-CF4C-4C4A-9888-623493DDA452}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
