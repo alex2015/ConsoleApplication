@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ConsoleApplication.AsyncProgram;
+using ConsoleApplication.MessageQueueNamespace;
 using ConsoleApplication.Thead;
 
 namespace ConsoleApplication
@@ -48,7 +49,7 @@ namespace ConsoleApplication
 
 
 
-            MyAsyncException.MyMain();
+            MyMessageQueue.MyMain();
         }
 
     }
