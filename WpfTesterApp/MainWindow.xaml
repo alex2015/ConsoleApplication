@@ -1,8 +1,10 @@
 ﻿<Window x:Class="WpfTesterApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" Background="Azure" MouseMove="MainWindow_OnMouseMove">
     <Grid>
-        
+        <Button Content="Button" HorizontalAlignment="Left" Margin="41,29,0,0" VerticalAlignment="Top" Width="75" Background="#FFE4B7B7" Click="Button_Click"/>
+        <Calendar HorizontalAlignment="Left" Margin="41,102,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

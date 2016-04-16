@@ -24,5 +24,15 @@ namespace WpfTesterApp
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("You clicked the button!");
+        }
+
+        private void MainWindow_OnMouseMove(object sender, MouseEventArgs e)
+        {
+            this.Title = e.GetPosition(this).ToString();
+        }
     }
 }
