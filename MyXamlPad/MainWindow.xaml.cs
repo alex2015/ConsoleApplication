@@ -9,10 +9,12 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
 
 namespace MyXamlPad
 {
@@ -45,12 +47,30 @@ namespace MyXamlPad
 
         private void Window_Closed(object sender, EventArgs e)
         {
-
+            File.WriteAllText("YourXaml.xaml", txtXamlData.Text);
+            Application.Current.Shutdown();
         }
 
         private void btnViewXaml_Click(object sender, RoutedEventArgs e)
         {
+            File.WriteAllText("YourXaml.xaml", txtXamlData.Text);
 
+            Window myWindow = null;
+
+            try
+            {
+                using (var stream = File.Open("YourXaml.xaml", FileMode.Open))
+                {
+                    myWindow = (Window) XamlReader.Load(stream);
+                    myWindow.ShowDialog();
+                    myWindow.Close();
+                    myWindow = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }
