@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using DAL;
 
 
@@ -55,6 +56,29 @@ namespace ConsoleApplication
                 {
                     Console.WriteLine("{0}", bd.Number);
                 }
+            }
+
+
+            using (var context = new InheritanceMappingContext())
+            {
+                var creditCard = new CreditCard_TPT
+                {
+                    Number = "987654321",
+                    CardType = 1
+                };
+                var user = new User_TPT
+                {
+                    UserId = 1,
+                    BillingInfo = creditCard
+                };
+                context.User_TPTs.Add(user);
+                context.SaveChanges();
+            }
+
+            using (var context = new InheritanceMappingContext())
+            {
+                var user = context.User_TPTs.Find(1);
+                Debug.Assert(user.BillingInfo is CreditCard_TPT);
             }
 
             Console.ReadKey();

@@ -1,7 +1,10 @@
-﻿namespace DAL
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace DAL
 {
     public abstract class BillingDetail_TPH
     {
+        [Key]
         public int BillingDetailId { get; set; }
         public string Owner { get; set; }
         public string Number { get; set; }

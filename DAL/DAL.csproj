@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InheritanceMappingContext.cs" />
+    <Compile Include="TPT.cs" />
     <Compile Include="TPH.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
