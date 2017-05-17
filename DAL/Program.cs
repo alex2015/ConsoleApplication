@@ -9,6 +9,7 @@ namespace ConsoleApplication
     {
         private static void Main(string[] args)
         {
+            //TPH
             using (var db = new InheritanceMappingContext())
             {
                 var ba1 = new BankAccount_TPH
@@ -58,7 +59,7 @@ namespace ConsoleApplication
                 }
             }
 
-
+            //TPT
             using (var context = new InheritanceMappingContext())
             {
                 var creditCard = new CreditCard_TPT
@@ -79,6 +80,26 @@ namespace ConsoleApplication
             {
                 var user = context.User_TPTs.Find(1);
                 Debug.Assert(user.BillingInfo is CreditCard_TPT);
+            }
+
+            //TPC
+
+            using (var context = new InheritanceMappingContext())
+            {
+                var bankAccount = new BankAccount_TPC
+                {
+                    BillingDetailId = 1
+                };
+                var creditCard = new CreditCard_TPC
+                {
+                    BillingDetailId = 2,
+                    CardType = 1
+                };
+
+                context.BillingDetail_TPCs.Add(bankAccount);
+                context.BillingDetail_TPCs.Add(creditCard);
+
+                context.SaveChanges();
             }
 
             Console.ReadKey();
