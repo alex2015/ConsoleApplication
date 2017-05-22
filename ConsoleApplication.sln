@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoredProcedures", "StoredP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{B66CD9FB-1057-4C3D-81C3-AA1E55CF7441}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogAnalyzer", "LogAnalyzer\LogAnalyzer.csproj", "{626F82FF-5BEE-4191-A4EE-16A30628ED43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogAnalyzerTest", "LogAnalyzerTest\LogAnalyzerTest.csproj", "{F30FEE93-447A-4634-B110-FEC34CE83A59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,14 @@ Global
 		{B66CD9FB-1057-4C3D-81C3-AA1E55CF7441}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B66CD9FB-1057-4C3D-81C3-AA1E55CF7441}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B66CD9FB-1057-4C3D-81C3-AA1E55CF7441}.Release|Any CPU.Build.0 = Release|Any CPU
+		{626F82FF-5BEE-4191-A4EE-16A30628ED43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{626F82FF-5BEE-4191-A4EE-16A30628ED43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{626F82FF-5BEE-4191-A4EE-16A30628ED43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{626F82FF-5BEE-4191-A4EE-16A30628ED43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F30FEE93-447A-4634-B110-FEC34CE83A59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F30FEE93-447A-4634-B110-FEC34CE83A59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F30FEE93-447A-4634-B110-FEC34CE83A59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F30FEE93-447A-4634-B110-FEC34CE83A59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
