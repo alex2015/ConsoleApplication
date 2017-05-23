@@ -1,4 +1,5 @@
-﻿using LogAnalyzer;
+﻿using System;
+using LogAnalyzer;
 using NUnit.Framework;
 
 namespace LogAnalyzerTest
@@ -7,13 +8,19 @@ namespace LogAnalyzerTest
     public class LogAnalyzerTests
     {
         [Test]
-        public void Analyze_TooShortFileName_CallsWebService()
+        public void Analyze_WebServiceThrows_SendsEmail()
         {
-            FakeWebService mockService = new FakeWebService();
-            LogAnalyzer.LogAnalyzer log = new LogAnalyzer.LogAnalyzer(mockService);
-            string tooShortFileName = "abc.ext";
+            FakeWebService stubService = new FakeWebService();
+            stubService.ToThrow = new Exception("fake exception");
+            FakeEmailService mockEmail = new FakeEmailService();
+            LogAnalyzer2 log = new LogAnalyzer2(stubService, mockEmail);
+
+            string tooShortFileName ="abc.ext";
             log.Analyze(tooShortFileName);
-            StringAssert.Contains("Слишком короткое имя файла ", mockService.LastError);
+            StringAssert.Contains("someone@somewhere.com", mockEmail.To);
+            StringAssert.Contains("fake exception", mockEmail.Body);
+            StringAssert.Contains("can’t log", mockEmail.Subject);
+
         }
     }
 }

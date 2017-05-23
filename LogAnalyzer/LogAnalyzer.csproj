@@ -42,10 +42,11 @@
   <ItemGroup>
     <Compile Include="AlwaysValidFakeExtensionManager.cs" />
     <Compile Include="ExtensionManagerFactory.cs" />
-    <Compile Include="FakeWebService.cs" />
+    <Compile Include="IEmailService.cs" />
     <Compile Include="IWebService.cs" />
     <Compile Include="IExtensionManager.cs" />
     <Compile Include="FileExtensionManager.cs" />
+    <Compile Include="LogAnalyzer2.cs" />
     <Compile Include="LogAnalyzer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

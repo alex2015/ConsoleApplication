@@ -50,6 +50,8 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="FakeEmailService.cs" />
+    <Compile Include="FakeWebService.cs" />
     <Compile Include="LogAnalyzerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
