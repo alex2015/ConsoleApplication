@@ -1,5 +1,4 @@
-﻿using System;
-using LogAnalyzer;
+﻿using LogAnalyzer;
 using NUnit.Framework;
 
 namespace LogAnalyzerTest
@@ -8,41 +7,13 @@ namespace LogAnalyzerTest
     public class LogAnalyzerTests
     {
         [Test]
-        public void overrideTest()
+        public void Analyze_TooShortFileName_CallsWebService()
         {
-            FakeExtensionManager stub = new FakeExtensionManager();
-            stub.WillBeValid = true;
-            TestableLogAnalyzer logan = new TestableLogAnalyzer(stub);
-
-            bool result = logan.IsValidLogFileName("file.ext");
-            Assert.True(result);
-        }
-    }
-
-    class FakeExtensionManager : IExtensionManager
-    {
-        public bool WillBeValid { get; set; }
-
-        public bool IsValid(string fileName)
-        {
-            return true;
-        }
-    }
-
-    class TestableLogAnalyzer : LogAnalyzerUsingFactoryMethod
-    {
-        public TestableLogAnalyzer(IExtensionManager mgr)
-        {
-            Manager = mgr;
-        }
-        public IExtensionManager Manager;
-
-        protected override IExtensionManager GetManager()
-        {
-            return Manager;
+            FakeWebService mockService = new FakeWebService();
+            LogAnalyzer.LogAnalyzer log = new LogAnalyzer.LogAnalyzer(mockService);
+            string tooShortFileName = "abc.ext";
+            log.Analyze(tooShortFileName);
+            StringAssert.Contains("Слишком короткое имя файла ", mockService.LastError);
         }
     }
 }
-
-
-
