@@ -27,6 +27,23 @@ namespace LogAnalyzerTest
             analyzer.Analyze("a.txt");
             logger.Received().LogError("Слишком короткое имя файла a.txt");
         }
+
+        [Test]
+        public void Returns_ByDefault_WorksForHardCodedArgument()
+        {
+            IFileNameRules fakeRules = Substitute.For<IFileNameRules>();
+            fakeRules.IsValidLogFileName(Arg.Any<String>()).Returns(true);
+            Assert.IsTrue(fakeRules.IsValidLogFileName("anything.txt"));
+        }
+
+        [Test]
+        public void Returns_ArgAny_Throws()
+        {
+            IFileNameRules fakeRules = Substitute.For<IFileNameRules>();
+            fakeRules.When(x => x.IsValidLogFileName(Arg.Any<string>()))
+            .Do(context => { throw new Exception("fake exception"); });
+            Assert.Throws<Exception>(() => fakeRules.IsValidLogFileName("anything"));
+        }
     }
 
     class FakeLogger : ILogger
