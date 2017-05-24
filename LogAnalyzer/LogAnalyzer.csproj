@@ -48,6 +48,9 @@
     <Compile Include="IWebService.cs" />
     <Compile Include="IExtensionManager.cs" />
     <Compile Include="FileExtensionManager.cs" />
+    <Compile Include="ErrorInfo.cs" />
+    <Compile Include="LogAnalyzer4.cs" />
+    <Compile Include="LogAnalyzer3.cs" />
     <Compile Include="LogAnalyzer2.cs" />
     <Compile Include="LogAnalyzer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
