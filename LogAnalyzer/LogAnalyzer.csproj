@@ -43,6 +43,7 @@
     <Compile Include="AlwaysValidFakeExtensionManager.cs" />
     <Compile Include="ExtensionManagerFactory.cs" />
     <Compile Include="IEmailService.cs" />
+    <Compile Include="ILogger.cs" />
     <Compile Include="IWebService.cs" />
     <Compile Include="IExtensionManager.cs" />
     <Compile Include="FileExtensionManager.cs" />

@@ -4,27 +4,21 @@ namespace LogAnalyzer
 {
     public class LogAnalyzer
     {
-        public bool IsValidLogFileName(string fileName)
-        {
-            return GetManager().IsValid(fileName);
-        }
-        protected virtual IExtensionManager GetManager()
-        {
-            return new FileExtensionManager();
-        }
+        public int MinNameLength { get; set; }
 
-
-        private IWebService service;
-        public LogAnalyzer(IWebService service)
+        private ILogger service;
+        public LogAnalyzer(ILogger service)
         {
             this.service = service;
         }
+
         public void Analyze(string fileName)
         {
-            if (fileName.Length < 8)
+            if (fileName.Length < MinNameLength)
             {
                 service.LogError("Слишком короткое имя файла " + fileName);
             }
         }
+
     }
 }
