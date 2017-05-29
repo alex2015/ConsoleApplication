@@ -54,6 +54,9 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="ConfigurationManagerTests.cs" />
+    <Compile Include="BaseTestsClass.cs" />
+    <Compile Include="LoggingFacility.cs" />
     <Compile Include="FakeEmailService.cs" />
     <Compile Include="FakeWebService.cs" />
     <Compile Include="EventRelatedTests.cs" />

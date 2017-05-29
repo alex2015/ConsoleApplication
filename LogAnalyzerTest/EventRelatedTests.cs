@@ -12,7 +12,7 @@ namespace LogAnalyzerTest
         public void ctor_WhenViewIsLoaded_CallsViewRender()
         {
             var mockView = Substitute.For<IView>();
-            Presenter p = new Presenter(mockView);
+            var p = new Presenter(mockView);
 
             /*Чтобы сгенерировать событие в тесте, на него надо подписать-
             ся.Конструкция выглядит нелепо, но она необходима, чтобы

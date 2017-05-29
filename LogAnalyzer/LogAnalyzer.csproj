@@ -43,6 +43,7 @@
     <Compile Include="AlwaysValidFakeExtensionManager.cs" />
     <Compile Include="ExtensionManagerFactory.cs" />
     <Compile Include="IEmailService.cs" />
+    <Compile Include="ILogger5.cs" />
     <Compile Include="IView.cs" />
     <Compile Include="ILogger.cs" />
     <Compile Include="IFileNameRules.cs" />
@@ -50,6 +51,8 @@
     <Compile Include="IExtensionManager.cs" />
     <Compile Include="FileExtensionManager.cs" />
     <Compile Include="ErrorInfo.cs" />
+    <Compile Include="LoggingFacility.cs" />
+    <Compile Include="LogAnalyzer5.cs" />
     <Compile Include="Presenter.cs" />
     <Compile Include="LogAnalyzer4.cs" />
     <Compile Include="LogAnalyzer3.cs" />
