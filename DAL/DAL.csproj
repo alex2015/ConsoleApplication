@@ -53,6 +53,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InheritanceMappingContext.cs" />
+    <Compile Include="Migrations\201705171130325_InitialCreate.cs" />
+    <Compile Include="Migrations\201705171130325_InitialCreate.Designer.cs">
+      <DependentUpon>201705171130325_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706031735406_Add_Table_Company.cs" />
+    <Compile Include="Migrations\201706031735406_Add_Table_Company.Designer.cs">
+      <DependentUpon>201706031735406_Add_Table_Company.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TPC.cs" />
     <Compile Include="TPT.cs" />
     <Compile Include="TPH.cs" />
@@ -62,6 +71,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705171130325_InitialCreate.resx">
+      <DependentUpon>201705171130325_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706031735406_Add_Table_Company.resx">
+      <DependentUpon>201706031735406_Add_Table_Company.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
