@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="AsyncProgram\MyAsyncProgram.cs" />
     <Compile Include="Dispose\ComplexResourceHolder.cs" />
+    <Compile Include="DynamicOrder.cs" />
     <Compile Include="Example1.cs" />
     <Compile Include="ExcelExample.cs" />
     <Compile Include="ExceptionLogEntry.cs" />
