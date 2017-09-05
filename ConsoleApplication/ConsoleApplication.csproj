@@ -68,6 +68,7 @@
     <Compile Include="Iterator.cs" />
     <Compile Include="LogEntryBaseEx.cs" />
     <Compile Include="MessageQueueNamespace\MyMessageQueue.cs" />
+    <Compile Include="Producer_Consumer\SelfMade_Producer_Consumer_Release.cs" />
     <Compile Include="Producer_Consumer\Producer_Consumer_Release.cs" />
     <Compile Include="Thead\BackGroundThread.cs" />
     <Compile Include="Thead\AddWithThreads.cs" />
