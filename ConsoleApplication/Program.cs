@@ -50,7 +50,7 @@ namespace ConsoleApplication
 
 
 
-            SelfMade_Producer_Consumer_Release.MyMain();
+            AutoEvent_Producer_Consumer_Release.MyMain();
         }
 
     }
