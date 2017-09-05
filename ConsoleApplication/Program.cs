@@ -50,7 +50,7 @@ namespace ConsoleApplication
 
 
 
-            ManualEventExample.MyMain();
+            ManualEvent_Producer_Consumer_Release.MyMain();
         }
 
     }

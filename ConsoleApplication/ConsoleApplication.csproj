@@ -68,6 +68,7 @@
     <Compile Include="Iterator.cs" />
     <Compile Include="LogEntryBaseEx.cs" />
     <Compile Include="MessageQueueNamespace\MyMessageQueue.cs" />
+    <Compile Include="Producer_Consumer\ManualEvent_Producer_Consumer_Release.cs" />
     <Compile Include="Producer_Consumer\ManualEventExample.cs" />
     <Compile Include="Producer_Consumer\AutoEvent_Producer_Consumer_Release.cs" />
     <Compile Include="Producer_Consumer\SelfMade_Producer_Consumer_Release.cs" />
