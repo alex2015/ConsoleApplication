@@ -40,7 +40,7 @@ namespace ConsoleApplication.Producer_Consumer
             foreach (var s in q.GetConsumingEnumerable())
             {
                 Console.WriteLine("Processing: {0}", s);
-                Thread.Sleep(2000);
+                Thread.Sleep(10000);
                 Console.WriteLine("Processed: {0}", s);
             }
         }
