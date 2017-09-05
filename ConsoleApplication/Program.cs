@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ConsoleApplication.AsyncProgram;
 using ConsoleApplication.MessageQueueNamespace;
+using ConsoleApplication.Producer_Consumer;
 using ConsoleApplication.Thead;
 
 namespace ConsoleApplication
@@ -49,7 +50,7 @@ namespace ConsoleApplication
 
 
 
-            ExcelExample.Method();
+            Producer_Consumer_Release.MyMain();
         }
 
     }
